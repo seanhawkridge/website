@@ -1,2 +1,7 @@
-<h1>WHAT THE FLIP REFKAH</h1>
+<h1>WHAT THE FLIP</h1>
 
+<% @posts.each do |post| %>
+  <div class="post">
+   <h2><%= link_to post.title, post %></h2>
+   <%= image_tag post.image if post.image.persisted? %>
+<% end %>
