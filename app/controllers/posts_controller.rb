@@ -6,6 +6,17 @@ class PostsController < ApplicationController
         @post = Post.new
     end
 
+    def new_image_post
+        @post = Post.new
+    end
+
+    def create_image_post
+        @post = Post.new(post_type: 'image', post_status: 'published')
+        @post.image.attach(post_params[:image]) if post_params[:image].present?
+        @post.save!
+        redirect_to :root
+    end
+
     def create
         @post = Post.create(post_params)
         redirect_to edit_post_path(@post)
