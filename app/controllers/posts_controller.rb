@@ -32,6 +32,13 @@ class PostsController < ApplicationController
     def destroy
     end
 
+    def update_status
+        @post = Post.find(params[:id])
+        @post.update_attribute(:post_status, params[:post_status])
+
+        redirect_to edit_post_path(@post)
+    end
+
     private
 
     def post_params

@@ -84,6 +84,7 @@ GEM
     brakeman (6.1.2)
       racc
     builder (3.3.0)
+    byebug (11.1.3)
     capybara (3.40.0)
       addressable
       matrix
@@ -327,6 +328,7 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootsnap
   brakeman
+  byebug
   capybara
   debug
   image_processing (~> 1.2)

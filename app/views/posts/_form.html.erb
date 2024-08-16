@@ -1,9 +1,10 @@
+
 <%= form_with model: @post do |form| %>
   <div class="field">
     <%= form.label :post_type %>
     <%= form.select :post_type, options_for_select(Post.post_types, @post.post_type) %>
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title %>   
     <%= form.label :author %>
     <%= form.text_field :author %>
     <%= form.label :content %>

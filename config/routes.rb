@@ -10,7 +10,9 @@ Rails.application.routes.draw do
     resource :email_verification, only: [:show, :create]
     resource :password_reset,     only: [:new, :edit, :create, :update]
   end
-  resources :posts, only: [:new, :edit, :create, :index, :show, :update]
+  resources :posts, only: [:new, :edit, :create, :index, :show, :update] do
+    post :update_status, on: :member
+  end
   root "home#index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
