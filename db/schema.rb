@@ -10,9 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_08_15_070155) do
+ActiveRecord::Schema[7.2].define(version: 2024_08_15_131408) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  # Custom types defined in this database.
+  # Note that some types may not work with other database engines. Be careful if changing database.
+  create_enum "status", ["draft", "published", "deleted"]
+  create_enum "type", ["article", "image", "quote"]
+
+  create_table "posts", force: :cascade do |t|
+    t.text "title"
+    t.text "body"
+    t.string "author"
+    t.enum "post_type", default: "article", enum_type: "type"
+    t.enum "post_status", default: "draft", enum_type: "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "sessions", force: :cascade do |t|
     t.bigint "user_id", null: false
