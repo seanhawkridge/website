@@ -1,2 +1,2 @@
-<%= image_tag @post.image%>
-<%= @post.posted_on_date %>
+<%= image_tag post.image if post.image.persisted? %>
+<%= post.posted_on_date %>

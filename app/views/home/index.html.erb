@@ -1,7 +1,9 @@
-<h1>WHAT THE FLIP</h1>
 
 <% @posts.each do |post| %>
   <div class="post">
-   <h2><%= link_to post.title, post %></h2>
-   <%= image_tag post.image if post.image.persisted? %>
+        <%= render "/posts/#{post.post_type}_post", post: post %>
+   </div>
 <% end %>
+
+<%= link_to 'Next >', root_path(page: next_page) if next_page %>
+<%= link_to '< Previous', root_path(page: previous_page) if previous_page %>
