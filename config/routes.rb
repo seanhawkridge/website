@@ -10,9 +10,14 @@ Rails.application.routes.draw do
     resource :email_verification, only: [:show, :create]
     resource :password_reset,     only: [:new, :edit, :create, :update]
   end
-  resources :posts, only: [:new, :edit, :create, :index, :show, :update] do
-    post :update_status, on: :member
+  namespace :admin do
+    resources :posts, only: [:new, :edit, :create, :index, :show, :update] do
+        post :update_status, on: :member
+    end
+    post "create_image", to: "posts#create_image_post"
+    get "new_image", to: "posts#new_image_post"
   end
+  resources :posts, only: [:index, :show]
   post "create_image", to: "posts#create_image_post"
   get "new_image", to: "posts#new_image_post"
 

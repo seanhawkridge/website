@@ -2,6 +2,14 @@ class ApplicationController < ActionController::Base
   before_action :set_current_request_details
   before_action :authenticate
 
+  protect_from_forgery with: :exception
+
+  helper_method :current_user
+  
+  def current_user
+    @current_user ||= Current.user
+  end
+
   private
     def authenticate
       if session_record = Session.find_by_id(cookies.signed[:session_token])

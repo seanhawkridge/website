@@ -1,0 +1,7 @@
+<div class="post">
+   <h2><%= link_to @post.title, @post %></h2>
+   <%= image_tag @post.image if @post.image.persisted? %>
+</div>
+<% if current_user %>
+ <%= button_to "Set Draft", :update_status_post, params: { post_id: @post.id, post_status: :draft } %>
+<% end %>

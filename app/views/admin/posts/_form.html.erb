@@ -1,5 +1,5 @@
 
-<%= form_with model: @post do |form| %>
+<%= form_with model: @post, url: admin_posts_path(@post) do |form| %>
   <div class="field">
     <%= form.label :post_type %>
     <%= form.select :post_type, options_for_select(Post.post_types, @post.post_type) %>

@@ -1,8 +1,0 @@
-
-<% if @post.draft? %>
-    <%= button_to "Publish", :update_status_post, params: { post_id: @post.id, post_status: :published  } %>
-<% else %>
-    <%= button_to "Set Draft", :update_status_post, params: { post_id: @post.id, post_status: :draft } %>
-<% end %> 
-
-<%= render "form" %>

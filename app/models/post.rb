@@ -12,4 +12,8 @@ class Post < ApplicationRecord
         image: 'image',
         article: 'article',
         quote: 'quote'
+
+    def posted_on_date
+        created_at.strftime("%B %d, %Y")
+    end
 end
