@@ -1,0 +1,15 @@
+<header class="w-full bg-gray-800 text-white py-4 px-6 font-mono">
+  <div class="container mx-auto flex justify-between items-center">
+    <div class="w-1/4"></div>
+    <div class="w-1/2 flex justify-center">
+    <%= link_to root_path do %>
+      <div class="bg-white text-gray-800 rounded-full w-20 h-20 flex items-center justify-center">
+        <span class="text-xl font-bold">SH</span>
+      </div>
+    </div>
+    <% end %>
+    <nav class="w-1/4 text-right">
+      <%= link_to "About", "#about", class: "text-sm hover:text-gray-300" %>
+    </nav>
+  </div>
+</header>

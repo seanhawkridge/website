@@ -1,9 +1,7 @@
-
-<% @posts.each do |post| %>
-  <div class="post">
-        <%= render "/posts/#{post.post_type}_post", post: post %>
-   </div>
-<% end %>
-
-<%= link_to 'Next >', root_path(page: next_page) if next_page %>
-<%= link_to '< Previous', root_path(page: previous_page) if previous_page %>
+<div class="w-full">
+  <h1 class="ml-4 text-left text-3xl mb-4">I'm Director of Leadership at <%= link_to 'Makers', 'http://makers.tech', class: 'underline' %>.</h1>
+  <h2 class="ml-4 text-left text-xl mb-4">
+    I'm helping engineering leaders build successful and enjoyable leadership careers, developing an innovative programme for organisations adopting AI, and leading on product incubation.</h2>
+    <h2 class="ml-4 text-left text-xl mb-4">Frequently called a people person; occasionally called a troublemaker.</h2>
+  </h2>
+</div>
