@@ -32,7 +32,7 @@ class Admin::PostsController < ApplicationController
 
         @post.update(post_params)
 
-        redirect_to edit_post_path(@post)
+        redirect_to edit_admin_post_path(@post)
     end
 
     def destroy

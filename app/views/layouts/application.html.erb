@@ -18,9 +18,9 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="font-mono flex flex-col min-h-full">
+  <body class="font-sans flex flex-col min-h-full bg-s-paper-100/50">
     <%= render "shared/header" %>
-    <main class="flex-grow container mx-auto mt-28 px-5">
+    <main class="flex-grow container mx-auto mt-12 px-5 relative">
       <%= yield %>
     </main>
     <%= render "shared/footer" %>

@@ -1,5 +1,5 @@
 
-<%= form_with model: @post, url: admin_posts_path(@post) do |form| %>
+<%= form_with model: @post, url: admin_post_path(@post) do |form| %>
   <div class="field">
     <%= form.label :post_type %>
     <%= form.select :post_type, options_for_select(Post.post_types, @post.post_type) %>
@@ -16,6 +16,6 @@
     <%= form.submit %>
   </div>
 
-  <%= image_tag @post.background_image if @post.background_image.persisted?  %>
-  <%= image_tag @post.image if @post.image.persisted?  %>
+  <%= image_tag @post.background_image.variant(resize_to_fill: [200, 200]) if @post.background_image.persisted?  %>
+  <%= image_tag @post.image.variant(resize_to_fill: [200, 200]) if @post.image.persisted?  %>
 <% end %>

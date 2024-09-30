@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   post "create_image", to: "posts#create_image_post"
   get "new_image", to: "posts#new_image_post"
 
-  root "home#index"
+  root "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -35,4 +35,5 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   get 'about', to: 'pages#about', as: :about
+  get 'home', to: 'pages#home', as: :home
 end

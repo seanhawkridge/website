@@ -6,7 +6,7 @@
   <% end %>
 
   <div class="flex justify-between mt-8">
-    <%= link_to '< Previous', root_path(page: previous_page), class: "text-blue-500 hover:text-blue-700" if previous_page %>
-    <%= link_to 'Next >', root_path(page: next_page), class: "text-blue-500 hover:text-blue-700" if next_page %>
+    <%= link_to '< Previous', posts_path(page: previous_page), class: "text-blue-500 hover:text-blue-700" if previous_page %>
+    <%= link_to 'Next >', posts_path(page: next_page), class: "text-blue-500 hover:text-blue-700" if next_page %>
   </div>
 </div>
