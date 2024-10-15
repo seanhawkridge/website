@@ -1,6 +1,6 @@
 <div class="flex flex-col items-center justify-center min-h-[90vh]">
   <div class="w-full max-w-3xl mx-auto flex flex-col items-center">
-    <%= image_tag post.image, class: "w-full h-auto max-h-[calc(90vh-200px)] object-contain", style: "margin-bottom: 60px;" if post.image.persisted? %>
+    <%= image_tag post.image.variant(resize_to_fit: [600, 500]), class: "mb-16" if post.image.persisted? %>
     <div class="text-center">
       <%= post.posted_on_date %>
     </div>

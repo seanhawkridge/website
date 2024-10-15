@@ -1,11 +1,11 @@
-<div class="flex">
-<div class="basis-3/6 m-6 mb-12">
+<div class="container grid grid-cols-1 md:grid-cols-2 gap-4 mx-auto">
+<div class="m-6 mb-12 px-4">
   <h1 class="text-left text-3xl pb-4 font-bold font-sans">Currently: Director of Leadership at <%= link_to 'Makers', 'http://makers.tech', class: 'underline' %>.</h1>
   <h2 class="text-left text-xl pb-4">
     I'm helping engineering leaders build sustainable and enjoyable leadership careers through teaching, coaching, mentoring and writing. A people person and a trouble-maker. </h2>
   </h2>
 </div>
-<div class="basis-3/6 m-6 mb-12 flex">
+<div class="m-6 mb-12 flex px-4">
   <% @posts.map do |post| %>
   <div class="basis-1/2 mx-4">
     <%= image_tag post.image.variant(resize_to_fill: [300, 300]) %>

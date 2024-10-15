@@ -5,7 +5,7 @@ class PostsController < ApplicationController
 
 
   def index
-    @posts = Post.all.then(&paginate)
+    @posts = Post.all.order(created_at: :desc).then(&paginate)
     @next_page = page_no + 1
     @previous_page = page_no - 1
   end
