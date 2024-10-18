@@ -93,6 +93,13 @@ GEM
       aws-eventstream (~> 1, >= 1.0.2)
     base64 (0.2.0)
     bcrypt (3.1.20)
+    better_html (2.1.1)
+      actionview (>= 6.0)
+      activesupport (>= 6.0)
+      ast (~> 2.0)
+      erubi (~> 1.4)
+      parser (>= 2.4)
+      smart_properties
     bigdecimal (3.1.8)
     bindex (0.8.1)
     bootsnap (1.18.4)
@@ -119,6 +126,13 @@ GEM
       reline (>= 0.3.8)
     dotenv (3.1.4)
     drb (2.2.1)
+    erb_lint (0.7.0)
+      activesupport
+      better_html (>= 2.0.1)
+      parser (>= 2.7.1.4)
+      rainbow
+      rubocop (>= 1)
+      smart_properties
     erubi (1.13.0)
     ffi (1.17.0-aarch64-linux-gnu)
     ffi (1.17.0-arm-linux-gnu)
@@ -258,6 +272,9 @@ GEM
       unicode-display_width (>= 2.4.0, < 3.0)
     rubocop-ast (1.32.0)
       parser (>= 3.3.1.0)
+    rubocop-erb (0.5.4)
+      better_html
+      rubocop (~> 1.45)
     rubocop-minitest (0.35.1)
       rubocop (>= 1.61, < 2.0)
       rubocop-ast (>= 1.31.1, < 2.0)
@@ -286,6 +303,7 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    smart_properties (1.17.0)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -345,12 +363,14 @@ DEPENDENCIES
   authentication-zero
   aws-sdk-s3
   bcrypt (~> 3.1.7)
+  better_html
   bootsnap
   brakeman
   byebug
   capybara
   debug
   dotenv
+  erb_lint
   image_processing (~> 1.2)
   importmap-rails
   jbuilder
@@ -358,6 +378,8 @@ DEPENDENCIES
   puma (>= 5.0)
   rails (~> 7.2.0)
   redis (>= 4.0.1)
+  rubocop-erb
+  rubocop-rails
   rubocop-rails-omakase
   selenium-webdriver
   sprockets-rails

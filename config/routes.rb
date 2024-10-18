@@ -1,21 +1,21 @@
 Rails.application.routes.draw do
   get  "sign_in", to: "sessions#new"
   post "sign_in", to: "sessions#create"
-  resources :sessions, only: [:index, :show, :destroy]
-  resource  :password, only: [:edit, :update]
+  resources :sessions, only: [ :index, :show, :destroy ]
+  resource  :password, only: [ :edit, :update ]
   namespace :identity do
-    resource :email,              only: [:edit, :update]
-    resource :email_verification, only: [:show, :create]
-    resource :password_reset,     only: [:new, :edit, :create, :update]
+    resource :email,              only: [ :edit, :update ]
+    resource :email_verification, only: [ :show, :create ]
+    resource :password_reset,     only: [ :new, :edit, :create, :update ]
   end
   namespace :admin do
-    resources :posts, only: [:new, :edit, :create, :index, :show, :update] do
-        post :update_status, on: :member
+    resources :posts, only: [ :new, :edit, :create, :index, :show, :update ] do
+      post :update_status, on: :member
     end
     post "create_image", to: "posts#create_image_post"
     get "new_image", to: "posts#new_image_post"
   end
-  resources :posts, only: [:index, :show]
+  resources :posts, only: [ :index, :show ]
   post "create_image", to: "posts#create_image_post"
   get "new_image", to: "posts#new_image_post"
 
@@ -32,6 +32,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  get 'about', to: 'pages#about', as: :about
-  get 'home', to: 'pages#home', as: :home
+  get "about", to: "pages#about", as: :about
+  get "home", to: "pages#home", as: :home
 end

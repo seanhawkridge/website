@@ -1,8 +1,8 @@
 <div class="container mx-auto my-20 py-20 block">
     <h2 class="text-5xl text-center font-serif"><%= post.title %></h2>
     <p class="text-center mt-6"><%= post.posted_on_date %></p>
-    <div class="mt-6 mx-24 text-justify"><%= post.content.to_plain_text.truncate_words(100, omission: '(...)') %></div>
+    <div class="mt-6 mx-24 text-justify"><%= post.content.to_plain_text.truncate_words(100, omission: "(...)") %></div>
     <div class="text-center">
-            <%= link_to "Read", post %>
-        </div>
+        <%= link_to "Read", post %>
+    </div>
 </div>

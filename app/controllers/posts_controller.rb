@@ -1,8 +1,7 @@
 class PostsController < ApplicationController
-    include Pagination
+  include Pagination
 
-    helper_method :next_page, :previous_page
-
+  helper_method :next_page, :previous_page
 
   def index
     @posts = Post.all.order(created_at: :desc).then(&paginate)
@@ -10,7 +9,7 @@ class PostsController < ApplicationController
     @previous_page = page_no - 1
   end
 
-    def show
-        @post = Post.find(params[:id])
-    end
+  def show
+    @post = Post.find(params[:id])
+  end
 end
