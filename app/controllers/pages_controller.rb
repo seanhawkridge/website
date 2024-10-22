@@ -5,6 +5,6 @@ class PagesController < ApplicationController
   end
 
   def home
-    @posts = Post.image.last(2)
+    @posts = Post.image.last(2).reverse
   end
 end
