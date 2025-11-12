@@ -1,7 +1,7 @@
 <%= form_with model: @post, url: admin_create_image_path do |form| %>
   <div class="field">
     <%= form.label :image, "Post Image" %>
-    <%= form.file_field :image %>
+    <%= form.file_field :image, capture: "camera" %>
     <%= form.submit %>
   </div>
 <% end %>
